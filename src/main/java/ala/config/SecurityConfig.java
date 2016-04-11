@@ -19,5 +19,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         httpSecurity.csrf().disable(); // post methods work now TODO disable only on some paths
         httpSecurity.headers().frameOptions().disable();
+        //fdsfdsf
     }
 }
