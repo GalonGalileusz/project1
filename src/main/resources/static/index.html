@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Project 1</title>
-
 </head>
 
-<body>
-hello world.
+<body ng-app="firstApp" ng-controller="registerCtrl as registerC">
+
+<!--<input type="text" placeholder="Enter your name" ng-model="user.name">-->
+<!--<h1>Hello {{user.name +' '+ user.surname}} </h1>-->
+
+<form>
+    <input type="text" placeholder="Enter your name" ng-model="user.name"> <br>
+    <input type="text" placeholder="Enter your surname" ng-model="user.surname"> <br>
+    <input type="password" placeholder="Enter your password" ng-model="user.passwd"> <br>
+    <input type="password" placeholder="Retype your password" ng-model="user.repasswd"> <br>
+    <input type="email" placeholder="Enter your email" ng-model="user.email"> <br>
+    <!--<input type="submit"> <br>-->
+    <button ng-click="registerFun()">Register</button>
+
+</form>
+
+<p> {{message.text}}</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/register-controller.js"></script>
 </body>
 </html>
 

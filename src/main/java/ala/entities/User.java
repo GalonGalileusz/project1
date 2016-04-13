@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 public class User extends AbstractEntity {
 
-    private String name, surname, passwd;
+    private String name, surname, passwd, repasswd;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
@@ -37,17 +37,6 @@ public class User extends AbstractEntity {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", passwd='" + passwd + '\'' +
-                ", posts=" + posts.toString() +
-                ", email='" + email + '\'' +
-                '}';
-    }
-
     public String getEmail() {
         return email;
     }
@@ -70,5 +59,25 @@ public class User extends AbstractEntity {
 
     public void setPosts(List<Post> posts) {
         this.posts = posts;
+    }
+
+    public String getRepasswd() {
+        return repasswd;
+    }
+
+    public void setRepasswd(String repasswd) {
+        this.repasswd = repasswd;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", passwd='" + passwd + '\'' +
+                ", repasswd='" + repasswd + '\'' +
+                ", posts=" + posts.toString() +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
